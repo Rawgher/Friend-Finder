@@ -17,7 +17,7 @@
 
     <!-- Setting up local css -->
     <link rel="stylesheet" href="css/stylesheet.css">
-    
+
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -38,12 +38,12 @@
                             <div class="row">
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <input id="userName" type="text" class="validate">
+                                    <input id="userName" type="text" class="validate" required>
                                     <label for="userName">Name (Required)</label>
                                 </div>
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">add_a_photo</i>
-                                    <input id="photoInput" type="text" class="validate">
+                                    <input id="photoInput" type="text" class="validate" required>
                                     <label for="photoInput">Provide an Image URL (Required)</label>
                                 </div>
                             </div>
@@ -51,6 +51,8 @@
                         <br>
                     </div>
                 </div>
+
+                <!-- Questions for the survey -->
                 <div class="card-content white-text">
                     <div class="card-action">
 
@@ -177,7 +179,7 @@
         </div>
     </div>
 
-    <!-- Modal Structure -->
+    <!-- Setting up modal -->
     <div id="modal1" class="modal">
         <div class="modal-content">
             <div class="row">
@@ -213,6 +215,7 @@
                 <script type="text/javascript">
 
                     $(document).ready(function () {
+
                         // initializing the select options
                         $('select').formSelect();
 
@@ -232,10 +235,60 @@
                             // starting and ending attribute styles
                             startingTop: '4%',
                             endingTop: '10%'
+
                         });
 
+                        $('#submit').on(click, function (event) {
+
+                            // add a validation instead of prevent default?
+
+                            event.preventDefault();
+
+                            let surveyInput = {
+                                name: $('#userName').val().trim(),
+                                photo: $('#photoInput').val().trim(),
+                                scores: [
+                                    $('#question1').val().trim(),
+                                    $('#question2').val().trim(),
+                                    $('#question3').val().trim(),
+                                    $('#question4').val().trim(),
+                                    $('#question5').val().trim(),
+                                    $('#question6').val().trim(),
+                                    $('#question7').val().trim(),
+                                    $('#question8').val().trim(),
+                                    $('#question9').val().trim(),
+                                    $('#question10').val().trim()
+                                ]
+
+                            };
+
+                            $.post('/api/friends', surveyInput, function (data) {
+
+                                $("#matchedUserName").text(data.matchName);
+                                $("#matchUserImage").attr("src", data.matchPic);
+
+                            });
+
+                            $('.modal').modal();
+
+                            // reseting all survey questions after submission
+                            $('#userName').val("");
+                            $('#photoInput').val("");
+                            $('#question1').val("");
+                            $('#question2').val("");
+                            $('#question3').val("");
+                            $('#question4').val("");
+                            $('#question5').val("");
+                            $('#question6').val("");
+                            $('#question7').val("");
+                            $('#question8').val("");
+                            $('#question9').val("");
+                            $('#question10').val("");
+
+                        });
 
                     });
+
                 </script>
 </body>
 
