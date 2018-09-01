@@ -3,6 +3,9 @@
 
 <head>
 
+    <!-- Setting up reset css -->
+    <link rel="stylesheet" href="css/reset.css">
+
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 
@@ -12,6 +15,9 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!-- Setting up local css -->
+    <link rel="stylesheet" href="css/stylesheet.css">
+    
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -171,16 +177,66 @@
         </div>
     </div>
 
-    <footer class="page-footer blue-grey">
-        <div class="left-align">
-            <a class="grey-text text-lighten-4" href="/api/friends">API Friends List | </a>
-            <a class="grey-text text-lighten-4" href="https://github.com/Rawgher/Friend-Finder" target="_blank"> Github Repo
-            </a>
-        </div>
-    </footer>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image">
+                            <img id="matchedUserImage" src="">
+                            <span class="card-title" id="matchedUserName"></span>
+                        </div>
+                        <div class="card-content">
+                            <p>Meet your closest match!</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="/survey" class="modal-close waves-effect waves-green btn-flat">Try matching with someone
+                            else?
+                        </a>
+                    </div>
+                </div>
 
-    <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+                <footer class="page-footer blue-grey">
+                    <div class="left-align">
+                        <a class="grey-text text-lighten-4" href="/api/friends">API Friends List | </a>
+                        <a class="grey-text text-lighten-4" href="https://github.com/Rawgher/Friend-Finder" target="_blank"> Github
+                            Repo
+                        </a>
+                    </div>
+                </footer>
+
+                <!--JavaScript at end of body for optimized loading-->
+                <script type="text/javascript" src="js/materialize.min.js"></script>
+
+                <script type="text/javascript">
+
+                    $(document).ready(function () {
+                        // initializing the select options
+                        $('select').formSelect();
+
+                        // setting up options for modal
+                        $('.modal').modal({
+
+                            // modal can only be dismissed by clicking the button
+                            dismissible: false,
+
+                            // opacity of modal background
+                            opacity: .5,
+
+                            // transition in and out
+                            inDuration: 300,
+                            outDuration: 300,
+
+                            // starting and ending attribute styles
+                            startingTop: '4%',
+                            endingTop: '10%'
+                        });
+
+
+                    });
+                </script>
 </body>
 
 </html>
