@@ -246,6 +246,7 @@
 
                             event.preventDefault();
 
+                            // pulling values from the survey and storing them in an object
                             let surveyInput = {
                                 name: $('#userName').val().trim(),
                                 photo: $('#photoInput').val().trim(),
@@ -264,6 +265,7 @@
 
                             };
 
+                            // posting the user's match in the modal
                             $.post('/api/friends', surveyInput, function (data) {
 
                                 $("#matchedUserName").text(data.matchName);
@@ -271,6 +273,7 @@
 
                             });
 
+                            // making the modal run
                             $('.modal').modal();
 
                             // reseting all survey questions after submission
