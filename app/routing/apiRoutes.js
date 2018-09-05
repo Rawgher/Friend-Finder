@@ -19,6 +19,20 @@ module.exports = function(app) {
 
         for (let i = 0; i < friends.length; i++) {
 
+            let difference = 0;
+
+            for (let j = 0; j < userScore.length; j++) {
+                difference += Math.abs(friends[i].scores[j] - userScores[j])
+            }
+
+            if (difference < friendDif) {
+
+                friendDif = difference;
+                matchName = friends[i].name;
+                matchPic = friends[i].photo;
+            }
         }
+
+        friends.push(surveyInput);
     })
 }
