@@ -1,10 +1,11 @@
 let faker = require("faker");
 
+// images might be an issue. should change if not resoled by the weekend
 let newFriends = [
 
     {
         name: faker.name.findName(),
-        photo: faker.image.imageUrl(),
+        photo: faker.image.image(),
         scores: [
             '1',
             '3',
