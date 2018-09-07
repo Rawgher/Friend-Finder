@@ -173,8 +173,8 @@
 
                         <br>
                         <div class="row center-align">
-                            <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit Your
-                                Responses
+                            <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
+                                Your Responses
                                 <i class="material-icons right">send</i>
                             </button>
                         </div>
@@ -250,30 +250,30 @@
                             // posting the user's match in the modal
                             $.post('/api/friends', surveyInput, function (data) {
 
-                                $('.modal').modal({
-
-                                    // modal can only be dismissed by clicking the button
-                                    dismissible: true
-
-                                    // opacity of modal background
-                                    // opacity: .5,
-
-                                    // transition in and out
-                                    // inDuration: 300,
-                                    // outDuration: 300,
-
-                                    // starting and ending attribute styles
-                                    // startingTop: '4%',
-                                    // endingTop: '10%'
-
-                                });
-                                $("#modal1").modal('open');
-                                $("#modal1").empty();
-
                                 $("#matchedUserName").text(data.matchName);
                                 $("#matchUserImage").attr("src", data.matchPic);
 
                             });
+
+                            $('.modal').modal({
+
+                                // modal can only be dismissed by clicking the button
+                                dismissible: true
+
+                                // opacity of modal background
+                                // opacity: .5,
+
+                                // transition in and out
+                                // inDuration: 300,
+                                // outDuration: 300,
+
+                                // starting and ending attribute styles
+                                // startingTop: '4%',
+                                // endingTop: '10%'
+
+                            });
+                            $(".modal").modal('open');
+
 
                             // making the modal run
                             // $('.modal').modal();
