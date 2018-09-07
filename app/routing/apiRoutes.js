@@ -9,9 +9,9 @@ module.exports = function(app) {
     })
 
     app.post('/api/friends', function(req, res) {
-        let surveyInput = req.body;
+        let user = req.body;
 
-        let userScore = surveyInput.scores;
+        let userScore = user.scores;
 
         let matchName = '';
         let matchPic = '';
@@ -22,7 +22,7 @@ module.exports = function(app) {
             let difference = 0;
 
             for (let j = 0; j < userScore.length; j++) {
-                difference += Math.abs(friends[i].scores[j] - userScores[j])
+                difference += Math.abs(friends[i].scores[j] - userScore[j])
             }
 
             if (difference < friendDif) {
@@ -33,6 +33,6 @@ module.exports = function(app) {
             }
         }
 
-        friends.push(surveyInput);
+        friends.push(user);
     })
 }

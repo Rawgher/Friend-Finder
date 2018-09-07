@@ -9,11 +9,13 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+        </script>
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
 
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -211,34 +213,14 @@
                     </div>
                 </div>
 
+
+
                 <!--JavaScript at end of body for optimized loading-->
-                <script type="text/javascript" src="js/materialize.min.js"></script>
-
                 <script type="text/javascript">
-
                     $(document).ready(function () {
 
                         // initializing the select options
                         $('select').formSelect();
-
-                        // setting up options for modal
-                        $('.modal').modal({
-
-                            // modal can only be dismissed by clicking the button
-                            dismissible: false,
-
-                            // opacity of modal background
-                            opacity: .5,
-
-                            // transition in and out
-                            inDuration: 300,
-                            outDuration: 300,
-
-                            // starting and ending attribute styles
-                            startingTop: '4%',
-                            endingTop: '10%'
-
-                        });
 
                         $('#submit').on('click', function (event) {
 
@@ -268,13 +250,36 @@
                             // posting the user's match in the modal
                             $.post('/api/friends', surveyInput, function (data) {
 
+                                $('.modal').modal({
+
+                                    // modal can only be dismissed by clicking the button
+                                    dismissible: true,
+
+                                    // opacity of modal background
+                                    // opacity: .5,
+
+                                    // transition in and out
+                                    // inDuration: 300,
+                                    // outDuration: 300,
+
+                                    // starting and ending attribute styles
+                                    // startingTop: '4%',
+                                    // endingTop: '10%'
+
+                                });
+                                $("#modal1").modal('open');
+                                $("#modal1").empty();
+
                                 $("#matchedUserName").text(data.matchName);
                                 $("#matchUserImage").attr("src", data.matchPic);
 
                             });
 
                             // making the modal run
-                            $('.modal').modal();
+                            // $('.modal').modal();
+
+                            // setting up options for modal
+
 
                             // reseting all survey questions after submission
                             $('#userName').val("");
