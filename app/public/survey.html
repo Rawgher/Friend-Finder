@@ -173,8 +173,8 @@
 
                         <br>
                         <div class="row center-align">
-                            <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
-                                Your Responses
+                            <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit Your
+                                Responses
                                 <i class="material-icons right">send</i>
                             </button>
                         </div>
@@ -247,14 +247,6 @@
 
                             };
 
-                            // posting the user's match in the modal
-                            $.post('/api/friends', surveyInput, function (data) {
-
-                                $("#matchedUserName").text(data.matchName);
-                                $("#matchUserImage").attr("src", data.matchPic);
-
-                            });
-
                             $('.modal').modal({
 
                                 // modal can only be dismissed by clicking the button
@@ -272,28 +264,26 @@
                                 // endingTop: '10%'
 
                             });
-                            $(".modal").modal('open');
 
+                            // posting the user's match in the modal
+                            $.post('/api/friends', surveyInput, function (data) {
+
+
+                                $("#matchedUserName").text(data.matchName);
+                                $("#matchUserImage").attr("src", data.matchPic);
+
+                            });
+
+
+
+
+                            $(".modal").modal('open');
 
                             // making the modal run
                             // $('.modal').modal();
 
                             // setting up options for modal
 
-
-                            // reseting all survey questions after submission
-                            $('#userName').val("");
-                            $('#photoInput').val("");
-                            $('#question1').val("");
-                            $('#question2').val("");
-                            $('#question3').val("");
-                            $('#question4').val("");
-                            $('#question5').val("");
-                            $('#question6').val("");
-                            $('#question7').val("");
-                            $('#question8').val("");
-                            $('#question9').val("");
-                            $('#question10').val("");
 
                         });
 
