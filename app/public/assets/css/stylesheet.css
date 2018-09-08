@@ -1,11 +1,33 @@
+.background-image {
+    background: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.opac {
+    opacity: 0.9;
+}
+
 .no-margin {
     margin-top: 0px !important;
     margin-bottom: 0px !important;
 }
 
+.new-pos {
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.position {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
 .less-pad {
-    padding-bottom: 3px;
-    padding-top: 3px;
+    padding-bottom: 3px !important;
+    padding-top: 3px !important;
 }
 
 .even-less-pad {
@@ -14,5 +36,24 @@
 }
 
 .new-width {
-    width: 100%;
+    width: 100% !important;
+}
+
+.no-right-mar {
+    margin-right: 0px !important;
+}
+
+.no-bot-pad {
+    padding-bottom: 0px;
+}
+
+.modal { 
+    top: 0px !important;
+    max-height: 100% !important ; 
+    overflow: visible;
+} 
+
+.positioning {
+    bottom: 30px;
+    top: 15px;
 }

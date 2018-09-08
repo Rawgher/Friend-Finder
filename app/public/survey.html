@@ -58,7 +58,7 @@
                 </div>
 
                 <!-- Questions for the survey -->
-                <div class="card-content white-text">
+                <div class="card-content white-text no-bot-pad">
                     <div class="card-action">
 
                         <h4>Question 1</h4>
@@ -180,11 +180,11 @@
                         </div>
                         <footer class="page-footer blue-grey darken-1">
                             <div class="left-align">
-                                <a class="grey-text text-lighten-4" href="/api/*">Home
+                                <a class="grey-text text-lighten-4 no-right-mar" href="/api/*">Home
                                     | </a>
-                                <a class="grey-text text-lighten-4" href="/api/friends" target="_blank">API Friends List
+                                <a class="grey-text text-lighten-4 no-right-mar" href="/api/friends" target="_blank">API Friends List
                                     | </a>
-                                <a class="grey-text text-lighten-4" href="https://github.com/Rawgher/Friend-Finder" target="_blank">Github
+                                <a class="grey-text text-lighten-4 no-right-mar" href="https://github.com/Rawgher/Friend-Finder" target="_blank">Github
                                     Repo
                                 </a>
                             </div>
@@ -202,9 +202,9 @@
         <div class="modal-content less-pad">
             <div class="row center-align">
                 <div class="col s12 m7 new-width">
-                    <div class="card no-margin">
+                    <div class="card no-margin positioning">
                         <div class="card-image new-width">
-                            <img id="matchedUserImage" src="">
+                            <img class="materialboxed" id="matchedUserImage" src="">
                         </div>
                         <div class="card-content even-less-pad">
                             <p>Meet your closest match!</p>
@@ -271,7 +271,7 @@
 
                                     // transition in and out
                                     inDuration: 300,
-                                    outDuration: 300
+                                    outDuration: 300,
 
                                 });
 
