@@ -2,13 +2,13 @@ let path = require("path");
 
 let friends = require('../data/friends.js');
 
-module.exports = function(app) {
+module.exports = function (app) {
 
-    app.get('/api/friends', function(req, res) {
+    app.get('/api/friends', function (req, res) {
         res.json(friends);
     })
 
-    app.post('/api/friends', function(req, res) {
+    app.post('/api/friends', function (req, res) {
         let user = req.body;
 
         let userScore = user.scores;
@@ -35,6 +35,6 @@ module.exports = function(app) {
 
         friends.push(user);
 
-        res.json({status: 'OK', matchName: matchName, matchPic: matchPic});
+        res.json({ status: 'OK', matchName: matchName, matchPic: matchPic });
     })
 }

@@ -1,16 +1,17 @@
 // setting up required npms
 let express = require("express");
 let bodyParser = require("body-parser");
-let path = require("path");
 
 // creating port and application that uses express
 let app = express();
-let PORT = process.env.PORT || 3000;
+let PORT = process.env.PORT || 8080;
 
 // setting up data parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(express.static(__dirname + '/public'));
+
 
 // setting up routes
 require("./app/routing/apiRoutes.js")(app);

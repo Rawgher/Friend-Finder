@@ -84,6 +84,6 @@ let newFriends = [
         ]
     }
 
-]; 
+];
 
 module.exports = newFriends;

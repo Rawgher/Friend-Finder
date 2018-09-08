@@ -3,9 +3,6 @@
 
 <head>
 
-    <!-- Setting up reset css -->
-    <link rel="stylesheet" href="assets/css/reset.css">
-
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 
@@ -20,8 +17,11 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!-- Setting up reset css -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/reset.css">
+
     <!-- Setting up local css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="/assets/css/stylesheet.css">
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -194,16 +194,16 @@
 
     <!-- Setting up modal -->
     <div id="modal1" class="modal">
-        <div class="modal-content">
-            <div class="row">
-                <div class="col s12 m7">
-                    <div class="card">
-                        <div class="card-image">
+        <div class="modal-content less-pad">
+            <div class="row center-align">
+                <div class="col s12 m7 new-width">
+                    <div class="card no-margin">
+                        <div class="card-image new-width">
                             <img id="matchedUserImage" src="">
-                            <span class="card-title black-text" id="matchedUserName"></span>
                         </div>
-                        <div class="card-content">
+                        <div class="card-content even-less-pad">
                             <p>Meet your closest match!</p>
+                            <span class="card-title black-text" id="matchedUserName"></span>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -266,28 +266,13 @@
 
                                     // transition in and out
                                     inDuration: 300,
-                                    outDuration: 300,
-
-                                    // starting and ending attribute styles
-                                    startingTop: '4%',
-                                    endingTop: '10%'
+                                    outDuration: 300
 
                                 });
 
                                 $(".modal").modal('open');
 
                             });
-
-
-
-
-
-
-                            // making the modal run
-                            // $('.modal').modal();
-
-                            // setting up options for modal
-
 
                         });
 
