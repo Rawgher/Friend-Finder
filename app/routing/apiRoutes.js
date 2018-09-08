@@ -15,7 +15,7 @@ module.exports = function(app) {
 
         let matchName = '';
         let matchPic = '';
-        let friendDif = 1000;
+        let friendDif = 10000;
 
         for (let i = 0; i < friends.length; i++) {
 
@@ -34,5 +34,7 @@ module.exports = function(app) {
         }
 
         friends.push(user);
+
+        res.json({status: 'OK', matchName: matchName, matchPic: matchPic});
     })
 }
