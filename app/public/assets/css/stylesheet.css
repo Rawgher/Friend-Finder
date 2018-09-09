@@ -36,7 +36,8 @@
 }
 
 .new-width {
-    width: 100% !important;
+    width: 85% !important;
+    margin-left: 50px !important;
 }
 
 .no-right-mar {
@@ -48,12 +49,19 @@
 }
 
 .modal { 
-    top: 0px !important;
+    top: 20px !important;
     max-height: 100% !important ; 
-    overflow: visible;
 } 
 
 .positioning {
     bottom: 30px;
     top: 15px;
+}
+
+.img-position {
+    padding-top: 20px;
+}
+
+.move-right {
+    margin-left: 20px;
 }
