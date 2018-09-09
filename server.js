@@ -10,8 +10,8 @@ let PORT = process.env.PORT || 8080;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// sets up route for local css and image files to run on html
 app.use(express.static('app/public'));
-
 
 // setting up routes
 require("./app/routing/apiRoutes.js")(app);
